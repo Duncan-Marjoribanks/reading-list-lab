@@ -20,9 +20,26 @@ const handleSubmit = function(event) {
 
   const readingList = document.querySelector('#reading-list');
   readingList.appendChild(newRecord);
+
+  form.reset();
 }
 
 form.addEventListener('submit', handleSubmit);
+
+
+//-----------------------------------------------
+
+const deleteButton = document.querySelector('#delete-all');
+
+const handleClick = function(event) {
+    const readingList = document.querySelector('#reading-list');
+    while (readingList.firstChild) {
+      readingList.removeChild(readingList.firstChild);
+    }
+}
+
+
+deleteButton.addEventListener('click', handleClick);
 
 
 
